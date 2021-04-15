@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ecf77b7-41d1-4cf7-90cf-3efeba87b0ef">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="5"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from clientes]]>
+	</queryString>
+	<field name="idCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ruc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="144" y="20" width="267" height="32" forecolor="#FFFFFF" backcolor="#6666FF" uuid="e0991f06-cefc-4b18-97eb-702dbd119ae0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="214" y="20" width="171" height="32" forecolor="#FFFFFF" uuid="57ebfbc5-fd4c-423c-9eff-a3347e89e5f9"/>
+				<textElement>
+					<font fontName="Calibri" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Clientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="28" y="14" width="484" height="1" forecolor="#3333FF" uuid="321c3f81-7e58-4d6c-afe9-8f793301e634"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<line>
+				<reportElement x="28" y="44" width="484" height="1" forecolor="#3333FF" uuid="83bdf3bd-858c-4665-aaca-a91b5572cfac"/>
+			</line>
+			<staticText>
+				<reportElement x="28" y="3" width="100" height="20" forecolor="#3333FF" uuid="c8e0eefb-5f5a-43ef-8166-aff8634fa893"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo de Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="3" width="100" height="20" forecolor="#3333FF" uuid="a2e3a298-d818-4042-ab73-6826df34546f"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="3" width="100" height="20" forecolor="#3333FF" uuid="8c752d34-193a-474d-aa89-20ff14362bdb"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="3" width="100" height="20" forecolor="#3333FF" uuid="845c421a-12f6-40cf-aca1-e2c29d6ddee3"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="0" width="100" height="20" uuid="a0d0826f-6e92-4229-93a1-469a355141ce"/>
+				<textFieldExpression><![CDATA[$F{idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="100" height="20" uuid="1c66e1b3-c917-4e1a-a8dd-e0ade6a3496c"/>
+				<textFieldExpression><![CDATA[$F{Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="100" height="20" uuid="24a1a751-7915-4da0-bf32-4edaa2023a16"/>
+				<textFieldExpression><![CDATA[$F{Nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="0" width="100" height="20" uuid="30bc044d-3533-4053-b5f9-93e2cd95c0c9"/>
+				<textFieldExpression><![CDATA[$F{Ruc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="28" y="16" width="484" height="1" forecolor="#3333FF" uuid="aaea6a85-ebd7-40d6-9f34-cc3d14dd560c"/>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="28" y="26" width="100" height="20" uuid="4c7b5da0-4936-49e3-999a-8411c5adc4aa"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="26" width="80" height="20" uuid="6585cd6e-495f-474d-92e3-5f9f9cdb11e7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="26" width="40" height="20" uuid="eafdda8c-ea5f-4d78-b90e-3a3b1b3a5e21"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

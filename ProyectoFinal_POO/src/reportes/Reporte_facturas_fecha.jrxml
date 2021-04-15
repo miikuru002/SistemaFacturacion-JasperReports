@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="01403b08-89b3-4cf2-8143-b7c38c1b97b0">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="157"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from factura where fecha=$P{fecha}]]>
+	</queryString>
+	<field name="numero" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="igv" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio_total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cliente_idCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="132" y="10" width="291" height="45" forecolor="#6666FF" backcolor="#3333FF" uuid="58e310f4-b8ac-4dbf-a832-e9553315c505"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="204" y="18" width="182" height="28" forecolor="#FFFFFF" uuid="ca2c4483-3b49-438c-885c-5cb7d6ea6720"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Reporte de Facturas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="41" y="46" width="474" height="1" forecolor="#3366FF" uuid="3e6a8914-e9d6-469d-adf2-529f508030b4"/>
+			</line>
+			<staticText>
+				<reportElement x="24" y="17" width="265" height="20" forecolor="#3333FF" uuid="4553b85f-fb29-450a-be39-d1570bfaab12"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Reporte de facturas previa busqueda por fecha]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="41" y="37" width="474" height="1" forecolor="#3366FF" uuid="95ad09f3-8c94-4032-a7a0-4dd40806c5be"/>
+			</line>
+			<staticText>
+				<reportElement x="17" y="6" width="100" height="20" forecolor="#3333FF" uuid="792faa9a-6188-4e65-ba5b-e166f2b97a33"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="6" width="100" height="20" forecolor="#3333FF" uuid="8b53897d-bf15-4c84-8c32-a38eed69cabb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="6" width="47" height="20" forecolor="#3333FF" uuid="a3e310c3-28bd-458e-bc09-ccd1001c1dc6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IGV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="6" width="100" height="20" forecolor="#3333FF" uuid="67967cc4-75c1-4885-af0a-57953091dbda"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="6" width="100" height="20" forecolor="#3333FF" uuid="29b13b8c-48e6-4d13-923a-91eb8465a7ba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código de Cliente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="19" width="60" height="20" uuid="fcbedbfc-ae19-4696-b02c-97d88a0d60d1"/>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="19" width="69" height="20" uuid="d08f6df5-32cf-4ab5-8d4f-2380768ee5db"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="19" width="54" height="20" uuid="41b16497-1702-4fc6-9980-511405c90762"/>
+				<textFieldExpression><![CDATA[$F{igv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="19" width="81" height="20" uuid="d6d45051-8717-4593-82de-602921bb50e5"/>
+				<textFieldExpression><![CDATA[$F{precio_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="19" width="100" height="20" uuid="5f3bdb46-5ff4-44e2-8143-802d8cd73df4"/>
+				<textFieldExpression><![CDATA[$F{Cliente_idCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="41" y="18" width="474" height="1" forecolor="#3366FF" uuid="b7db5825-19b8-45f3-bcd2-de73cb169f8c"/>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="46" y="30" width="100" height="20" uuid="eded2726-78ea-4808-b430-6957316fd65d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="30" width="100" height="20" uuid="72f38e93-e84c-482e-b2f7-bd9d1451bd42"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
